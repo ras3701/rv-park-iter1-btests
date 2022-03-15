@@ -21,10 +21,10 @@ def step_impl(context):
     # TODO: Pull the credentials from DB.
 
     username = context.browser.find_element_by_id("id_username")
-    username.send_keys("admin")
+    username.send_keys(context.admin_user_name)
 
     password = context.browser.find_element_by_id("id_password")
-    password.send_keys("Aggie@123")
+    password.send_keys(context.admin_password)
 
     # Locate login button and click on it
     context.browser.find_element_by_id("id_sign_in_button").click()
@@ -34,10 +34,6 @@ def step_impl(context):
 def step_impl(context):
     url = context.browser.current_url
     context.test.assertEquals(url, context.server_admin_dashboard_url)
-    
-    # Logout.
-    # TODO: Remove comments.
-    #context.browser.find_element_by_id("id_sign_out_button").click()
 
 
 @given("I am logged in")
@@ -65,7 +61,7 @@ def step_impl(context):
 @when("I submit an invalid login credential")
 def step_impl(context):
     username = context.browser.find_element_by_id("id_username")
-    username.send_keys("admin")
+    username.send_keys(context.admin_user_name)
 
     password = context.browser.find_element_by_id("id_password")
     password.send_keys("invalid_password")
@@ -95,7 +91,7 @@ def step_impl(context):
 @when("I leave the password field blank and enter an username")
 def step_impl(context):
     username = context.browser.find_element_by_id("id_username")
-    username.send_keys("admin")
+    username.send_keys(context.admin_user_name)
 
     password = context.browser.find_element_by_id("id_password")
     password.send_keys("")

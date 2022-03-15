@@ -74,9 +74,11 @@ def before_all(context):
     context.browser = webdriver.Chrome()
     context.browser.implicitly_wait(1)
     context.server_home_page_url = "https://test-rv-park.herokuapp.com/"
-    context.server_signin_url = "https://test-rv-park.herokuapp.com/signin/"
-    context.server_admin_dashboard_url = "https://test-rv-park.herokuapp.com/edithome/"
-    context.server_signup_url = "https://test-rv-park.herokuapp.com/signup/"
+    context.server_signin_url = context.server_home_page_url + "signin/"
+    context.server_admin_dashboard_url = context.server_home_page_url + "edithome/"
+    context.server_signup_url = context.server_home_page_url + "signup/"
+    context.admin_user_name = "admin"
+    context.admin_password = "Aggie@123"
 
 def after_all(context):
     context.browser.quit()
