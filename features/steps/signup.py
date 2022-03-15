@@ -84,7 +84,7 @@ def step_impl(context):
     context.browser.find_element_by_id("id_sign_up_button").click()
 
 
-@when(" I leave the username field empty and submit a valid password in the signup page")
+@when("I leave the username field empty and submit a valid password in the signup page")
 def step_impl(context):
     username = context.browser.find_element_by_id("id_username")
     username.send_keys("")
