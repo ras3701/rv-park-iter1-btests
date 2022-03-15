@@ -2,6 +2,8 @@ from behave import *
 import selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+import random
+import string
 
 use_step_matcher("re")
 
@@ -16,7 +18,9 @@ def step_impl(context):
 def step_impl(context):
     # TODO: Extract username and password from DB.
     username = context.browser.find_element_by_id("id_username")
-    username.send_keys(context.admin_user_name)
+    letters = string.ascii_letters
+    new_user_name = ("".join(random.choice(letters) for i in range(7)))
+    username.send_keys(new_user_name)
 
     password = context.browser.find_element_by_id("id_password1")
     password.send_keys(context.admin_password)
@@ -80,6 +84,20 @@ def step_impl(context):
     context.browser.find_element_by_id("id_sign_up_button").click()
 
 
+@when(" I leave the username field empty and submit a valid password in the signup page")
+def step_impl(context):
+    username = context.browser.find_element_by_id("id_username")
+    username.send_keys("")
+
+    password = context.browser.find_element_by_id("id_password1")
+    password.send_keys("password!")
+    password = context.browser.find_element_by_id("id_password2")
+    password.send_keys("password!")
+
+    # Locate Sign Up button and click on it
+    context.browser.find_element_by_id("id_sign_up_button").click()
+
+
 @when("I leave one of the password fields empty and submit a valid username in the signup page")
 def step_impl(context):
     username = context.browser.find_element_by_id("id_username")
@@ -89,6 +107,20 @@ def step_impl(context):
     password.send_keys("HelloWorld!")
     password = context.browser.find_element_by_id("id_password2")
     password.send_keys("")
+
+    # Locate Sign Up button and click on it
+    context.browser.find_element_by_id("id_sign_up_button").click()
+
+
+@when("I submit existing username in the signup page")
+def step_impl(context):
+    username = context.browser.find_element_by_id("id_username")
+    username.send_keys(context.admin_user_name)
+
+    password = context.browser.find_element_by_id("id_password1")
+    password.send_keys(context.admin_password)
+    password = context.browser.find_element_by_id("id_password2")
+    password.send_keys(context.admin_password)
 
     # Locate Sign Up button and click on it
     context.browser.find_element_by_id("id_sign_up_button").click()
