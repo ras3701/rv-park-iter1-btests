@@ -150,4 +150,3 @@ Scenario: As an admin, I should be modify all fields together
      And hit the submit button
     Then the text for all fields should match the modified values
 
-

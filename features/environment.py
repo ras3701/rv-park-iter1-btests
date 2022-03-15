@@ -63,13 +63,19 @@ def before_all(context):
     context.test_runner.teardown_test_environment()
 
 
-# def before_scenario(context, scenario):
-#     use_fixture(django_test_case, context)
+def after_scenario(context, scenario):
+    try:
+        # Signout
+        context.browser.find_element_by_id("id_sign_out_button").click()
+    except NoSuchElementException:
+        # Do nothing
 
 def before_all(context):
     context.browser = webdriver.Chrome()
     context.browser.implicitly_wait(1)
-    # context.server_url = "https://localhost:8000"
+    context.server_home_page_url = "https://test-rv-park.herokuapp.com/"
+    context.server_signin_url = "https://test-rv-park.herokuapp.com/signin/"
+    context.server_admin_dashboard_url = "https://test-rv-park.herokuapp.com/edithome/"
 
 def after_all(context):
     context.browser.quit()

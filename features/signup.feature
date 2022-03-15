@@ -29,5 +29,3 @@ Feature: Signup Page
     Given I am on the signup page
     When I leave one or both the password fields empty and submit a valid username
     Then I see an error message and I am on the signup page
-
-   
