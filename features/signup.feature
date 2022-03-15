@@ -27,7 +27,16 @@ Feature: Signup Page
     When I leave the username field empty and submit a valid password in the signup page
     Then I see an error message and I am on the signup page
 
-   Scenario: User leaves one or both the password fields empty on the signup page and is unable to create an account.
+   Scenario: User leaves both the password fields empty on the signup page and is unable to create an account.
     Given I am on the signup page
-    When I leave one or both the password fields empty and submit a valid username in the signup page
+    When I leave both the password fields empty and submit a valid username in the signup page
     Then I see an error message and I am on the signup page
+
+   Scenario: User leaves one of the password fields empty on the signup page and is unable to create an account.
+    Given I am on the signup page
+    When I leave one of the password fields empty and submit a valid username in the signup page
+    Then I see an error message and I am on the signup page
+  
+   # TODO:
+   # Scenario: When an user enters a duplicate username and valid passwords on the signup page, the user's request is rejected.
+
