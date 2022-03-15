@@ -76,6 +76,7 @@ def before_all(context):
     context.server_home_page_url = "https://test-rv-park.herokuapp.com/"
     context.server_signin_url = "https://test-rv-park.herokuapp.com/signin/"
     context.server_admin_dashboard_url = "https://test-rv-park.herokuapp.com/edithome/"
+    context.server_signup_url = "https://test-rv-park.herokuapp.com/signup/"
 
 def after_all(context):
     context.browser.quit()
