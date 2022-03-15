@@ -12,7 +12,7 @@ def step_impl(context):
     br.get(context.server_signup_url)
 
 
-@when("I submit a valid username and password")
+@when("I submit a valid username and password in the signup page")
 def step_impl(context):
     # TODO: Extract username and password from DB.
     username = context.browser.find_element_by_id("id_username")

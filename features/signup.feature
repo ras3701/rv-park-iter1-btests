@@ -1,10 +1,10 @@
 
-#Feature: Signup Page
-#
-#  Scenario: User enters all the fields correctly on the signup page and is able to create an account.
-#    Given I am on signup page
-#    When I submit a valid username and password in the signup page
-#    Then I am logged in and am redirected to the admin dashboard page
+Feature: Signup Page
+
+  Scenario: User enters all the fields correctly on the signup page and is able to create an account.
+    Given I am on signup page
+    When I submit a valid username and password in the signup page
+    Then I am logged in and am redirected to the admin dashboard page
 
 #  # TODO: Need to add when email address is used as username.
 #  #  Scenario: User enters an incorrect value for username on the signup page and is unable to create an account.
