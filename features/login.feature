@@ -5,10 +5,6 @@ Feature: Login/Logout Page
     When I submit a valid login credential
     Then I am redirected to the admin dashboard page
 
-  Background: Admin is already logged in
-    Given I am on login page
-    When I submit a valid login credential
-    Then I am redirected to the admin dashboard page
   Scenario: Admin is able to logout successfully.
     Given I am logged in
     When I hit the logout button
@@ -19,7 +15,7 @@ Feature: Login/Logout Page
     When I submit an invalid login credential
     Then I remain on the login page
     # TODO: Can check for error message later.
-  
+
   Scenario: User leaves the username field empty and hits the login button.
     Given I am on login page
     When I leave the username field blank and enter a password
@@ -32,10 +28,10 @@ Feature: Login/Logout Page
     Then I remain on the login page
     # TODO: Can check for error message later.
 
-  # Scenario: User enters an invalid username and is unable to login.
-  #   Given I am on login page
-  #   When I enter an username that does not exist in the DB and enter a password
-  #   Then I see an error message and I am on the login page
+   Scenario: User enters an invalid username and is unable to login.
+     Given I am on login page
+     When I submit an invalid login credential
+     Then I remain on the login page
 
   # Scenario: User is able to login.
   #   Given I am on login page

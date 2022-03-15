@@ -42,7 +42,13 @@ def step_impl(context):
 
 @given("I am logged in")
 def step_impl(context):
-    # Do nothing. Background task should take care of this.
+    context.execute_steps(u"""
+         Given I am on login page
+         When I submit a valid login credential
+    """)
+
+    pass
+
 
 
 @when("I hit the logout button")
@@ -65,7 +71,7 @@ def step_impl(context):
     password.send_keys("invalid_password")
 
     # Locate login button and click on it
-    context.browser.find_element_by_id("id_login_button").click()
+    context.browser.find_element_by_id("id_sign_in_button").click()
 
 
 @then("I remain on the login page")
@@ -83,6 +89,21 @@ def step_impl(context):
     password.send_keys("test123")
 
     # Locate login button and click on it
-    context.browser.find_element_by_id("id_login_button").click()
+    context.browser.find_element_by_id("id_sign_in_button").click()
+
+
+@when("I leave the password field blank and enter an username")
+def step_impl(context):
+    username = context.browser.find_element_by_id("id_username")
+    username.send_keys("admin")
+
+    password = context.browser.find_element_by_id("id_password")
+    password.send_keys("")
+
+    # Locate login button and click on it
+    context.browser.find_element_by_id("id_sign_in_button").click()
+
+
+
 
 

@@ -67,8 +67,8 @@ def after_scenario(context, scenario):
     try:
         # Signout
         context.browser.find_element_by_id("id_sign_out_button").click()
-    except NoSuchElementException:
-        # Do nothing
+    except:
+        pass
 
 def before_all(context):
     context.browser = webdriver.Chrome()
