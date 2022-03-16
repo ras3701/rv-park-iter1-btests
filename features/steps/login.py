@@ -19,9 +19,6 @@ def step_impl(context):
 
 @when("I submit a valid login credential")
 def step_impl(context):
-    # Fill the login information
-    # TODO: Pull the credentials from DB.
-
     username = context.browser.find_element_by_id("id_username")
     username.send_keys(context.admin_user_name)
 
