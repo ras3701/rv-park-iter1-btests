@@ -193,3 +193,78 @@ def step_impl(context, text):
     context.test.assertEquals(carousel_1_body_home.get_attribute('textContent'), text)
     context.browser.get(context.server_admin_dashboard_url)
 
+
+use_step_matcher("parse")
+@when("I modify the Carousel 2 Header field to {text}")
+def step_impl(context, text):
+    carousel_2_header = context.browser.find_element_by_id("id_carousel_header_1")
+    carousel_2_header.clear()
+    carousel_2_header.send_keys(text)
+
+
+use_step_matcher("parse")
+@then("the text for Carousel 2 Header field should match {text}")
+def step_impl(context, text):
+    carousel_2_header = context.browser.find_element_by_id("id_carousel_header_1")
+    context.test.assertEquals(carousel_2_header.get_attribute('value'), text)
+    context.browser.get(context.server_home_page_url)
+    carousel_2_header_home = context.browser.find_element_by_xpath("//*[@id='carouselExampleCaptions']/div[2]/div[2]/div/h4")
+    context.test.assertEquals(carousel_2_header_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)
+
+
+use_step_matcher("parse")
+@when("I modify the Carousel 2 Contents field to {text}")
+def step_impl(context, text):
+    carousel_2_body = context.browser.find_element_by_id("id_carousel_body_1")
+    carousel_2_body.clear()
+    carousel_2_body.send_keys(text)
+
+
+use_step_matcher("parse")
+@then("the text for Carousel 2 Contents field should match {text}")
+def step_impl(context, text):
+    carousel_2_body = context.browser.find_element_by_id("id_carousel_body_1")
+    context.test.assertEquals(carousel_2_body.get_attribute('value'), text)
+    context.browser.get(context.server_home_page_url)
+    carousel_2_body_home = context.browser.find_element_by_xpath("//*[@id='carouselExampleCaptions']/div[2]/div[2]/div/p")
+    context.test.assertEquals(carousel_2_body_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)
+
+
+use_step_matcher("parse")
+@when("I modify the Carousel 3 Header field to {text}")
+def step_impl(context, text):
+    carousel_3_header = context.browser.find_element_by_id("id_carousel_header_2")
+    carousel_3_header.clear()
+    carousel_3_header.send_keys(text)
+
+
+use_step_matcher("parse")
+@then("the text for Carousel 3 Header field should match {text}")
+def step_impl(context, text):
+    carousel_3_header = context.browser.find_element_by_id("id_carousel_header_2")
+    context.test.assertEquals(carousel_3_header.get_attribute('value'), text)
+    context.browser.get(context.server_home_page_url)
+    carousel_3_header_home = context.browser.find_element_by_xpath("//*[@id='carouselExampleCaptions']/div[2]/div[3]/div/h4")
+    context.test.assertEquals(carousel_3_header_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)
+
+
+use_step_matcher("parse")
+@when("I modify the Carousel 3 Contents field to {text}")
+def step_impl(context, text):
+    carousel_3_body = context.browser.find_element_by_id("id_carousel_body_2")
+    carousel_3_body.clear()
+    carousel_3_body.send_keys(text)
+
+
+use_step_matcher("parse")
+@then("the text for Carousel 3 Contents field should match {text}")
+def step_impl(context, text):
+    carousel_3_body = context.browser.find_element_by_id("id_carousel_body_2")
+    context.test.assertEquals(carousel_3_body.get_attribute('value'), text)
+    context.browser.get(context.server_home_page_url)
+    carousel_3_body_home = context.browser.find_element_by_xpath("//*[@id='carouselExampleCaptions']/div[2]/div[3]/div/p")
+    context.test.assertEquals(carousel_3_body_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)

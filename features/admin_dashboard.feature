@@ -79,27 +79,25 @@ Scenario: As an admin, I should be able to modify the Carousel 1 Contents field
      And hit the submit button
     Then the text for Carousel 1 Contents field should match Slide 1 Body Test
 
-##Scenario: As an admin, I should be able to modify the Carousel 1 Image field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Carousel 1 Image field with a valid file
-##     And hit the submit button
-##    Then the content for Carousel 1 Image field should match the modified value
-##     And the values for other fields should not change
-##
-##Scenario: As an admin, I should be able to modify the Carousel 2 Header field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Carousel 2 Header field
-##     And hit the submit button
-##    Then the text for Carousel 2 Header field should match the modified value
-##     And the values for other fields should not change
-##
-##Scenario: As an admin, I should be able to modify the Carousel 2 Contents field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Carousel 2 Contents field
-##     And hit the submit button
-##    Then the text for Carousel 2 Contents field should match the modified value
-##     And the values for other fields should not change
-##
+#Scenario: As an admin, I should be able to modify the Carousel 1 Image field
+#    Given I am on the Edit Home Page Contents Page
+#    When I modify the Carousel 1 Image field with a valid file
+#     And hit the submit button
+#    Then the content for Carousel 1 Image field should match the modified value
+#     And the values for other fields should not change
+#
+Scenario: As an admin, I should be able to modify the Carousel 2 Header field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Carousel 2 Header field to Slide 2 Header Test
+     And hit the submit button
+    Then the text for Carousel 2 Header field should match Slide 2 Header Test
+
+Scenario: As an admin, I should be able to modify the Carousel 2 Contents field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Carousel 2 Contents field to Slide 2 Body Test
+     And hit the submit button
+    Then the text for Carousel 2 Contents field should match Slide 2 Body Test
+
 ##Scenario: As an admin, I should be able to modify the Carousel 2 Image field
 ##    Given I am on the Edit Home Page Contents Page
 ##    When I modify the Carousel 2 Image field with a valid file
@@ -107,20 +105,18 @@ Scenario: As an admin, I should be able to modify the Carousel 1 Contents field
 ##    Then the content for Carousel 2 Image field should match the modified value
 ##     And the values for other fields should not change
 ##
-##Scenario: As an admin, I should be able to modify the Carousel 3 Header field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Carousel 3 Header field
-##     And hit the submit button
-##    Then the text for Carousel 3 Header field should match the modified value
-##     And the values for other fields should not change
-##
-##Scenario: As an admin, I should be able to modify the Carousel 3 Contents field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Carousel 3 Contents field
-##     And hit the submit button
-##    Then the text for Carousel 3 Contents field should match the modified value
-##     And the values for other fields should not change
-##
+Scenario: As an admin, I should be able to modify the Carousel 3 Header field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Carousel 3 Header field to Slide 3 Header Test
+     And hit the submit button
+    Then the text for Carousel 3 Header field should match Slide 3 Header Test
+
+Scenario: As an admin, I should be able to modify the Carousel 3 Contents field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Carousel 3 Contents field to Slide 3 Body Test
+     And hit the submit button
+    Then the text for Carousel 3 Contents field should match Slide 3 Body Test
+
 ##Scenario: As an admin, I should be able to modify the Carousel 3 Image field
 ##    Given I am on the Edit Home Page Contents Page
 ##    When I modify the Carousel 3 Image field with a valid file
