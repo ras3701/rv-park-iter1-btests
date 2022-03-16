@@ -66,7 +66,11 @@ def before_all(context):
 def after_scenario(context, scenario):
     try:
         # Signout
-        context.browser.find_element_by_id("id_sign_out_button").click()
+        if context.browser.find_element_by_id("id_sign_out_button"):
+            context.browser.find_element_by_id("id_sign_out_button").click()
+        else:
+            context.browser.find_element_by_xpath("//*[@id='navbarResponsive']/a/button").click()
+
     except:
         pass
 
@@ -77,8 +81,9 @@ def before_all(context):
     context.server_signin_url = context.server_home_page_url + "signin/"
     context.server_admin_dashboard_url = context.server_home_page_url + "edithome/"
     context.server_signup_url = context.server_home_page_url + "signup/"
-    context.admin_user_name = "manik"
-    context.admin_password = "Rohan@123"
+    context.admin_user_name = "rishabh"
+    context.admin_password = "rishabh"
+
 
 def after_all(context):
     context.browser.quit()

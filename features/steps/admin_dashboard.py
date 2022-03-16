@@ -43,8 +43,8 @@ def step_impl(context, text):
     context.browser.get(context.server_home_page_url)
     about_us_home = context.browser.find_element_by_xpath("/html/body/div[1]/div/h1")
     context.test.assertEquals(about_us_home.get_attribute('textContent'), text)
-
-
+    context.browser.get(context.server_admin_dashboard_url)
+    # context.browser.find_element_by_xpath("//*[@id='navbarResponsive']/a/button").click()
 
 use_step_matcher("parse")
 @when("I modify the About Us Body field to {text}")
@@ -61,3 +61,13 @@ def step_impl(context, text):
     context.browser.get(context.server_home_page_url)
     about_us_home = context.browser.find_element_by_xpath("//*[@id='about']/div/div/p")
     context.test.assertEquals(about_us_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)
+    # need to handle logout scenario from the home page
+
+
+use_step_matcher("parse")
+@when("I modify the Amenities Header field to {text}")
+def step_impl(context, text):
+    ameneties_header_field = context.browser.find_element_by_id("id_ameneties_header")
+    ameneties_header_field.clear()
+    ameneties_header_field.send_keys(text)

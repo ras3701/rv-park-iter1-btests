@@ -13,6 +13,8 @@ def step_impl(context):
     # context.selenium = webdriver.chrome(options=chrome_options)
     br = context.browser
     br.get(context.server_signin_url)
+    context.test.assertEquals(context.browser.current_url, context.server_signin_url)
+
 
 
 @when("I submit a valid login credential")
