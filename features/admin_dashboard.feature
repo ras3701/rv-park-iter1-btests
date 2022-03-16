@@ -28,36 +28,32 @@ Scenario: As an admin, I should be able to modify the Amenities Header field
     When I modify the Amenities Header field to Amenities header test
      And hit the submit button
     Then the text for Amenities Header field should match Amenities header test
-     And the values for other fields should not change
-##
-##Scenario: As an admin, I should be able to modify the Amenities Body field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Amenities Body field
-##     And hit the submit button
-##    Then the text for Amenities Body field should match the modified value
-##     And the values for other fields should not change
-##
-##Scenario: As an admin, I should be able to modify the Phone Number field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Phone Number field with a valid value
-##     And hit the submit button
-##    Then the text for Phone Number field should match the modified value
-##     And the values for other fields should not change
-##
-##Scenario: As an admin, I should not be able to modify the Phone Number field if I enter an invalid value
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Phone Number field with an invalid value
-##     And hit the submit button
-##    Then the text for Phone Number field should not change
-##     And the values for other fields should not change
-##
-##Scenario: As an admin, I should be able to modify the Email address field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Email address field with a valid value
-##     And hit the submit button
-##    Then the text for Email address field should match the modified value
-##     And the values for other fields should not change
-##
+
+Scenario: As an admin, I should be able to modify the Amenities Body field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Amenities Body field to Amenities Body test
+     And hit the submit button
+    Then the text for Amenities Body field should match Amenities Body test
+
+Scenario: As an admin, I should be able to modify the Phone Number field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Phone Number field to 0123456789
+     And hit the submit button
+    Then the text for Phone Number field should match 0123456789
+
+#Scenario: As an admin, I should not be able to modify the Phone Number field if I enter an invalid value
+#    Given I am on the Edit Home Page Contents Page
+#    When I modify the Phone Number field with an invalid value
+#     And hit the submit button
+#    Then the text for Phone Number field should not change
+#     And the values for other fields should not change
+
+Scenario: As an admin, I should be able to modify the Email address field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Email address field to abc@gmail.com
+     And hit the submit button
+    Then the text for Email address field should match abc@gmail.com
+
 ##Scenario: As an admin, I should not be able to modify the Email address field if I enter an invalid value
 ##    Given I am on the Edit Home Page Contents Page
 ##    When I modify the Email address field with an invalid value
@@ -65,13 +61,13 @@ Scenario: As an admin, I should be able to modify the Amenities Header field
 ##    Then the text for Email address field should not change
 ##     And the values for other fields should not change
 ##
-##Scenario: As an admin, I should be able to modify the Location field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Location field
-##     And hit the submit button
-##    Then the text for Location field should match the modified value
-##     And the values for other fields should not change
-##
+Scenario: As an admin, I should be able to modify the Location field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Location field
+     And hit the submit button
+    Then the text for Location field should match the modified value
+     And the values for other fields should not change
+
 ##Scenario: As an admin, I should be able to modify the Carousel 1 Header field
 ##    Given I am on the Edit Home Page Contents Page
 ##    When I modify the Carousel 1 Header field
