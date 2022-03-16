@@ -61,12 +61,12 @@ Scenario: As an admin, I should be able to modify the Email address field
 ##    Then the text for Email address field should not change
 ##     And the values for other fields should not change
 ##
-Scenario: As an admin, I should be able to modify the Location field
-    Given I am on the Edit Home Page Contents Page
-    When I modify the Location field
-     And hit the submit button
-    Then the text for Location field should match the modified value
-     And the values for other fields should not change
+#Scenario: As an admin, I should be able to modify the Location field
+#    Given I am on the Edit Home Page Contents Page
+#    When I modify the Location field
+#     And hit the submit button
+#    Then the text for Location field should match the modified value
+#     And the values for other fields should not change
 
 ##Scenario: As an admin, I should be able to modify the Carousel 1 Header field
 ##    Given I am on the Edit Home Page Contents Page

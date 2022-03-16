@@ -81,8 +81,8 @@ def before_all(context):
     context.server_signin_url = context.server_home_page_url + "signin/"
     context.server_admin_dashboard_url = context.server_home_page_url + "edithome/"
     context.server_signup_url = context.server_home_page_url + "signup/"
-    context.admin_user_name = "rishabh"
-    context.admin_password = "rishabh"
+    context.admin_user_name = "admin"
+    context.admin_password = "Aggie@123"
 
 
 def after_all(context):
