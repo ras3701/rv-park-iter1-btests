@@ -1,29 +1,27 @@
-#Feature: Admin Dashboard Page - Modify Home Page Contents.
-#
-#Background: Admin is already logged in
-#    Given I am on login page
-#    When I submit a valid login credential
-#      And I select the Edit Home Page Contents option on admin dashboard
-#    Then I am redirected to the Edit Home Page Contents page
-#
+Feature: Admin Dashboard Page - Modify Home Page Contents.
+use_step_matcher("parse")
+Scenario: Admin can navigate to Edit Home Page Contents tab
+    Given I am logged in
+    When I select the Edit Home Page Contents option on admin dashboard
+    Then I am redirected to the Edit Home Page Contents page
+
 #Scenario: As an admin, I should be able to see the current values for each field when upon selecting "Edit Home Page Contents"
 #    Given I am on the Edit Home Page Contents Page
 #    When I do not modify any field
 #    Then the text for each field should match the default or current value
 #
-#Scenario: As an admin, I should be able to modify the About Us Header field
-#    Given I am on the Edit Home Page Contents Page
-#    When I modify the About Us Header field
-#     And hit the submit button
-#    Then the text for About Us Header field should match the modified value
-#     And the values for other fields should not change
-#
-#Scenario: As an admin, I should be able to modify the About Us Body field
-#    Given I am on the Edit Home Page Contents Page
-#    When I modify the About Us Body field
-#     And hit the submit button
-#    Then the text for About Us Body field should match the modified value
-#     And the values for other fields should not change
+
+Scenario: As an admin, I should be able to modify the About Us Header field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the About Us Header field to About us
+     And hit the submit button
+    Then the text for About Us Header field should match About us
+
+Scenario: As an admin, I should be able to modify the About Us Body field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the About Us Body field to About us Body test
+     And hit the submit button
+    Then the text for About Us Body field should match About us Body test
 #
 #Scenario: As an admin, I should be able to modify the Amenities Header field
 #    Given I am on the Edit Home Page Contents Page
