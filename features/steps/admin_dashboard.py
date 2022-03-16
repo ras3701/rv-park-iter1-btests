@@ -122,9 +122,9 @@ def step_impl(context, text):
 use_step_matcher("parse")
 @when("I modify the Email address field to {text}")
 def step_impl(context, text):
-    phone_num = context.browser.find_element_by_id("id_email")
-    phone_num.clear()
-    phone_num.send_keys(text)
+    email = context.browser.find_element_by_id("id_email")
+    email.clear()
+    email.send_keys(text)
 
 
 use_step_matcher("parse")
@@ -133,6 +133,63 @@ def step_impl(context, text):
     email = context.browser.find_element_by_id("id_email")
     context.test.assertEquals(email.get_attribute('value'), text)
     context.browser.get(context.server_home_page_url)
-    phone_home = context.browser.find_element_by_xpath("// *[ @ id = 'contactus'] / div / div[2] / ul / li[3] / p")
-    context.test.assertEquals(phone_home.get_attribute('textContent'), text)
+    email_home = context.browser.find_element_by_xpath("// *[ @ id = 'contactus'] / div / div[2] / ul / li[3] / p")
+    context.test.assertEquals(email_home.get_attribute('textContent'), text)
     context.browser.get(context.server_admin_dashboard_url)
+
+
+use_step_matcher("parse")
+@when("I modify the Location field to {text}")
+def step_impl(context, text):
+    location = context.browser.find_element_by_id("id_location")
+    location.clear()
+    location.send_keys(text)
+
+use_step_matcher("parse")
+@then("the text for Location field should match {text}")
+def step_impl(context, text):
+    location = context.browser.find_element_by_id("id_location")
+    context.test.assertEquals(location.get_attribute('value'), text)
+    context.browser.get(context.server_home_page_url)
+    location_home = context.browser.find_element_by_xpath("//*[@id='contactus']/div/div[2]/ul/li[1]/p")
+    context.test.assertEquals(location_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)
+
+
+use_step_matcher("parse")
+@when("I modify the Carousel 1 Header field to {text}")
+def step_impl(context, text):
+    carousel_1_header = context.browser.find_element_by_id("id_carousel_header_0")
+    carousel_1_header.clear()
+    carousel_1_header.send_keys(text)
+
+
+use_step_matcher("parse")
+@then("the text for Carousel 1 Header field should match {text}")
+def step_impl(context, text):
+    carousel_1_header = context.browser.find_element_by_id("id_carousel_header_0")
+    context.test.assertEquals(carousel_1_header.get_attribute('value'), text)
+    context.browser.get(context.server_home_page_url)
+    carousel_1_header_home = context.browser.find_element_by_xpath("//*[@id='carouselExampleCaptions']/div[2]/div[1]/div/h4")
+    context.test.assertEquals(carousel_1_header_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)
+
+
+use_step_matcher("parse")
+@when("I modify the Carousel 1 Contents field to {text}")
+def step_impl(context, text):
+    carousel_1_body = context.browser.find_element_by_id("id_carousel_body_0")
+    carousel_1_body.clear()
+    carousel_1_body.send_keys(text)
+
+
+use_step_matcher("parse")
+@then("the text for Carousel 1 Contents field should match {text}")
+def step_impl(context, text):
+    carousel_1_body = context.browser.find_element_by_id("id_carousel_body_0")
+    context.test.assertEquals(carousel_1_body.get_attribute('value'), text)
+    context.browser.get(context.server_home_page_url)
+    carousel_1_body_home = context.browser.find_element_by_xpath("//*[@id='carouselExampleCaptions']/div[2]/div[1]/div/p")
+    context.test.assertEquals(carousel_1_body_home.get_attribute('textContent'), text)
+    context.browser.get(context.server_admin_dashboard_url)
+

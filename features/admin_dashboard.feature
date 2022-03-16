@@ -61,27 +61,24 @@ Scenario: As an admin, I should be able to modify the Email address field
 ##    Then the text for Email address field should not change
 ##     And the values for other fields should not change
 ##
-#Scenario: As an admin, I should be able to modify the Location field
-#    Given I am on the Edit Home Page Contents Page
-#    When I modify the Location field
-#     And hit the submit button
-#    Then the text for Location field should match the modified value
-#     And the values for other fields should not change
+Scenario: As an admin, I should be able to modify the Location field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Location field to Houston, TX
+     And hit the submit button
+    Then the text for Location field should match Houston, TX
 
-##Scenario: As an admin, I should be able to modify the Carousel 1 Header field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Carousel 1 Header field
-##     And hit the submit button
-##    Then the text for Carousel 1 Header field should match the modified value
-##     And the values for other fields should not change
-##
-##Scenario: As an admin, I should be able to modify the Carousel 1 Contents field
-##    Given I am on the Edit Home Page Contents Page
-##    When I modify the Carousel 1 Contents field
-##     And hit the submit button
-##    Then the text for Carousel 1 Contents field should match the modified value
-##     And the values for other fields should not change
-##
+Scenario: As an admin, I should be able to modify the Carousel 1 Header field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Carousel 1 Header field to Slide 1 Header Test
+     And hit the submit button
+    Then the text for Carousel 1 Header field should match Slide 1 Header Test
+
+Scenario: As an admin, I should be able to modify the Carousel 1 Contents field
+    Given I am on the Edit Home Page Contents Page
+    When I modify the Carousel 1 Contents field to Slide 1 Body Test
+     And hit the submit button
+    Then the text for Carousel 1 Contents field should match Slide 1 Body Test
+
 ##Scenario: As an admin, I should be able to modify the Carousel 1 Image field
 ##    Given I am on the Edit Home Page Contents Page
 ##    When I modify the Carousel 1 Image field with a valid file
